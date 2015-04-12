@@ -1,34 +1,9 @@
 .container {
-    width:100%;
+    width:300px;
     margin:0 auto;
     font-family:sans-serif;
-}
-
-.cat {
-    width:150px;
-    float: left;
-    margin:10px;
-    padding:10px;
-    border: 1px solid #ccc;
-    text-align:center;
-}
-
-.cat img {
-    max-height:150px;
-    cursor: pointer;
-    opacity:0.5;
-}
-
-.cat img:hover {
-    opacity:1;
-}
-
-.name {
-    text-align:center;
-    margin:0; padding:0;
 }
 
 .counter {
     text-align:center;
 }
-
