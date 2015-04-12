@@ -1,5 +1,8 @@
 (function() {
-    var data = [
+    var $container = $('.list ul'),
+        $preview = $('#preview'),
+        $template = $('<li class="item" data-index="0"></li>'),
+        cats = [
             {
                 "name": "Tom",
                 "photo": "images/cat1.jpg",
@@ -27,88 +30,20 @@
             }
         ];
     
-    var model = {
-        get: function() {
-            return data;
-        },
-        getItem: function(index) {
-            return data[index];
-        },
-        setItem: function(index, item) {
-            data[index] = item;
-            return true;
-        },
-        addItem: function(item) {
-            data.push(item);
-            return true;
-        }
-    };
+    $container.empty();       
     
-    var octopus = {
-        currentCat: {},
-        currentIndex: 0,        
-        /*returns a cat list*/
-        getAllCats: function() {
-            return model.get();
-        },
-        /*returns a cat info*/
-        getCat: function() {
-            this.currentCat = model.getItem(this.currentIndex);
-            return this.currentCat;
-        },
-        /*increase a clicks number*/
-        click: function() {
-            this.currentCat.clicks++;
-            model.setItem(this.currentCat);
-        }
-    };
-    
-    var listView = {
-        init: function() {
-            this.render();
-            this.events();
-        },
-        render: function() {
-            var $list = $('#container .list ul'),
-                data = octopus.getAllCats();
-            /*clean list*/
-            $list.empty();
-            /*printing a list*/
-            for(var i = 0; i < data.length; i++) {
-                $list.append($('<li>'+data[i].name+'</li>').attr('data-index', i));
-            }
-        },
-        events: function() {
-            $('#container .list').on('click', function(event) {
-                octopus.currentIndex = $(event.target).data('index');
-                imageView.render();
-            }.bind(this));
-        }
-    };
-    
-    var imageView = {
-        init: function() {
-            this.render();
-            this.events();
-        },
-        render: function() {
-            var $preview = $('#preview'),
-                data = octopus.getCat();           
-            
-            /*printing a preview block*/
-            $preview.find('.photo').attr('src', data.photo);
-            $preview.find('.name').text(data.name);
-            $preview.find('.clicks').text(data.clicks);
-        },
-        events: function() {
-            $('#preview img').on('click', function(event) {                
-                octopus.click();
-                this.render();
-            }.bind(this));
-        }
-    };    
-    
-    listView.init();
-    imageView.init();
+    for(var i = 0; i < cats.length; i++) {
+        $template.text(cats[i].name);
+        $template.attr('data-index', i);
+        $container.append($template.clone());
+    }   
+        
+    $container.on('click', function(event) {
+        var index = $(event.target).data('index');
+        cats[index].clicks++;        
+        $preview.find('img').attr('src', cats[index].photo);
+        $preview.find('h4').text(cats[index].name);
+        $preview.find('strong').text(cats[index].clicks);
+    });
     
 })();
