@@ -4,46 +4,31 @@
     font-family:sans-serif;
 }
 
-.list {
-    float:left;
-    width:100px;
-    height:100%;
-}
-
-.list ul {
-    list-style:none;
-    margin:0; padding:0;
-}
-
-li {
-    font-size:10pt;
-    font-weight:bold;    
-    margin:2px 0;
-    background: #555;
-    display:inline-block;
-    width:100%;
-    padding:2px 5px;
-    text-decoration:none;
-    color:#fff;
-    cursor:pointer;
-}
-
-h4 {
-    margin:0; padding:0;
-}
-
-li:hover {
-    background:#09c;
-}
-
-.preview {
-    border:1px solid #ccc;
-    width:200px;
-    height:270px;
+.cat {
+    width:150px;
+    float: left;
+    margin:10px;
+    padding:10px;
+    border: 1px solid #ccc;
     text-align:center;
-    margin-left:120px;    
 }
 
-.preview img {
-    max-height:200px;
+.cat img {
+    max-height:150px;
+    cursor: pointer;
+    opacity:0.5;
 }
+
+.cat img:hover {
+    opacity:1;
+}
+
+.name {
+    text-align:center;
+    margin:0; padding:0;
+}
+
+.counter {
+    text-align:center;
+}
+
