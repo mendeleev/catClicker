@@ -1,3 +1,30 @@
+hr {
+    border: none;
+    background: none;
+    border-bottom: 1px solid #ccc;
+}
+
+button {
+    background: none; border: none;
+    border: 1px solid #ccc;
+    padding:5px 10px;
+    cursor: pointer;
+}
+
+button[type=submit] {
+    background: green;
+    color: #fff;
+    border-color: green;
+}
+
+button:hover {
+    border-radius:5px;
+}
+
+.hide {
+    display: none;
+}
+
 .container {
     width:100%;
     margin:0 auto;
@@ -37,13 +64,35 @@ li:hover {
 }
 
 .preview {
+    float:left;
     border:1px solid #ccc;
     width:200px;
     height:270px;
     text-align:center;
-    margin-left:120px;    
+    margin-left: 30px;
 }
 
 .preview img {
     max-height:200px;
+}
+
+.admin {
+    float:left;
+    margin-left: 20px;
+}
+
+.admin label {
+    display: block;
+    margin:10px 0;
+}
+
+.admin .row {
+    margin-left:95px;
+}
+
+.admin label span {
+    display: inline-block;
+    width:80px;
+    text-align: right;
+    padding-right: 10px;
 }

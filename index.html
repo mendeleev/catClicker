@@ -16,7 +16,20 @@
 	        <img src="" class="photo" />
 	        <h4 class="name"></h4>
 	        <strong class="clicks">0</strong> clicks
-	    </div>    
+	    </div>
+
+		<form action="javascript:void(0)" class="admin" id="adminView">
+			<button class="edit" type="button">Edit cat</button>
+			<div class="editForm hide">
+				<hr/>
+				<label><span class="label">cat name:</span> <input type="text" name="name" required /></label>
+				<label><span class="label">photo:</span> <input type="text" name="photo" required /></label>
+				<label><span class="label">clicks:</span> <input type="number" name="clicks" required /></label>
+				<div class="row"><span class="label"></span>
+					<button class="cancel" type="button">Cancel</button> <button type="submit">Save</button>
+				</div>
+			</div>
+		</form>
 	</div>
 <script type="text/javascript" src="scripts/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="app/app.js"></script>
